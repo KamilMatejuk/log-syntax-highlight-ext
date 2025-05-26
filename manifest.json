@@ -1,14 +1,19 @@
 {
   "manifest_version": 3,
-  "name": "Plaintext Highlighter",
+  "name": "Jenkins Pipeline Log Highlighter",
   "version": "1.0",
-  "description": "A Chrome extension that highlights syntax in plaintext files, specifically for log files.",
+  "description": "Highlight syntax in logs from Jenkins Pipelines.",
   "permissions": ["activeTab", "storage"],
+  "icons": {
+    "16": "icons/16.png",
+    "32": "icons/32.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["utils.js", "content.js"],
-      "css": []
+      "js": ["utils.js", "content.js"]
     }
   ],
   "options_page": "options.html"
