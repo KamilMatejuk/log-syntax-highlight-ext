@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extension Options</title>
+</head>
+<body style="background: white; color: black;">
+    <h1>Formatting Options</h1>
+    <form>
+        <label>
+            Temporarly turn extension off
+            <input type="checkbox" id="hideAll">
+        </label>
+        <br>
+        <label>
+            Timestamp
+            <input type="color" id="date">
+        </label>
+        <br>
+        <label>
+            Start and end of Stage
+            <input type="color" id="stage">
+        </label>
+        <br>
+        <label>
+            Pipeline commands
+            <input type="color" id="pipeline">
+        </label>
+        <br>
+        <label>
+            Subcomands (starting with +)
+            <input type="color" id="plus">
+        </label>
+        <br>
+        <label>
+            Elements in brackets
+            <input type="color" id="brackets">
+        </label>
+        <br>
+        <label>
+            Hide lines with pipeline commands
+            <input type="checkbox" id="hidePipeline">
+        </label>
+        <br>
+        <label>
+            Hide lines with subcommands (starting with +)
+            <input type="checkbox" id="hidePlus">
+        </label>
+        <br>
+        <br>
+        <button type="input" id="save">Save</button>
+        <button type="input" id="reset">Reset</button>
+    </form>
+    <div style="display: grid; grid-template-columns: 1fr 1fr;">
+        <div>
+            <h3 style="text-align: center;">Example (light mode)</h3>
+            <pre id="example-light" style="background: white; color: black; padding: 20px; border: 1px solid gray;">
+                [2025-05-22T10:01:04.003Z] [Pipeline] stage { (set up)
+                [2025-05-22T10:01:04.006Z] [INFO] Started setup
+                [2025-05-22T10:01:04.045Z] [Pipeline] sleep
+                [2025-05-22T10:01:04.047Z] Sleeping for 10 sec
+                [2025-05-22T10:01:14.082Z] [Pipeline] echo
+                [2025-05-22T10:01:14.082Z] Test
+                [2025-05-22T10:01:14.082Z] [INFO] Hostname: abc
+                [2025-05-22T10:01:14.097Z] [Pipeline] os
+                [2025-05-22T10:01:14.102Z] + echo off
+                [2025-05-22T10:01:14.103Z] + uname -o
+                [2025-05-22T10:01:14.105Z] GNU/Linux
+                [2025-05-22T10:01:14.208Z] [Pipeline] }
+                [2025-05-22T10:01:14.208Z] [Pipeline] // stage
+            </pre>
+        </div>
+        <div>
+            <h3 style="text-align: center;">Example (dark mode)</h3>
+            <pre id="example-dark" style="background: black; color: white; padding: 20px; border: 1px solid gray">
+                [2025-05-22T10:01:04.003Z] [Pipeline] stage { (set up)
+                [2025-05-22T10:01:04.006Z] [INFO] Started setup
+                [2025-05-22T10:01:04.045Z] [Pipeline] sleep
+                [2025-05-22T10:01:04.047Z] Sleeping for 10 sec
+                [2025-05-22T10:01:14.082Z] [Pipeline] echo
+                [2025-05-22T10:01:14.082Z] Test
+                [2025-05-22T10:01:14.082Z] [INFO] Hostname: abc
+                [2025-05-22T10:01:14.097Z] [Pipeline] os
+                [2025-05-22T10:01:14.102Z] + echo off
+                [2025-05-22T10:01:14.103Z] + uname -o
+                [2025-05-22T10:01:14.105Z] GNU/Linux
+                [2025-05-22T10:01:14.208Z] [Pipeline] }
+                [2025-05-22T10:01:14.208Z] [Pipeline] // stage
+            </pre>
+        </div>
+    </div>
+    <script src="utils.js"></script>
+    <script src="options.js"></script>
+</body>
+</html>
