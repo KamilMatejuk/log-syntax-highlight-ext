@@ -1,15 +1,3 @@
-
-defaultOptions = {
-    'date': '#07aa04',
-    'plus': '#808080',
-    'stage': '#ff0000',
-    'pipeline': '#808080',
-    'brackets': '#ff8800',
-    'hidePipeline': false,
-    'hidePlus': false,
-    'hideAll': false,
-};
-
 function showExample(options) {
     ["example-light", "example-dark"].forEach(id => {
         const example = document.getElementById(id);
@@ -22,9 +10,9 @@ function showExample(options) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    chrome.storage.sync.get(Object.keys(defaultOptions), (savedOptions) => {
+    chrome.storage.sync.get(Object.keys(DEFAULT_OPTIONS), (savedOptions) => {
         // on change
-        Object.entries(defaultOptions).forEach(o => {
+        Object.entries(DEFAULT_OPTIONS).forEach(o => {
             const [id, defaultValue] = o;
             const option = document.getElementById(id);
             if (id.startsWith("hide")) {
@@ -40,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // reset
         document.getElementById("reset").addEventListener("click", () => {
-            Object.entries(defaultOptions).forEach(o => {
+            Object.entries(DEFAULT_OPTIONS).forEach(o => {
                 const [id, defaultValue] = o;
                 const option = document.getElementById(id);
                 if (id.startsWith("hide")) {
@@ -49,13 +37,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     option.value = defaultValue;
                 }
             });
-            chrome.storage.sync.set(defaultOptions, () => alert('Options saved!'));
+            chrome.storage.sync.set(DEFAULT_OPTIONS, () => alert('Options saved!'));
         })
 
         // save
         document.getElementById("save").addEventListener("click", () => {
             const newValues = Object.fromEntries(
-                Object.keys(defaultOptions).map(id => 
+                Object.keys(DEFAULT_OPTIONS).map(id => 
                     [id, id.startsWith("hide") ? document.getElementById(id).checked : document.getElementById(id).value]
                 )
             )
