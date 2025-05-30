@@ -1,1 +1,3 @@
-Chrome extension to highlight syntax of Jenkins Pipelines logs.
+Chrome extension to highlight the syntax of Jenkins Pipelines logs.
+
+[link >>](https://chromewebstore.google.com/detail/jenkins-pipeline-log-high/bnnbiekdndebgipmbfcmifmigpghfnbe)
