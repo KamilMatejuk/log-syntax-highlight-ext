@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Jenkins Pipeline Log Highlighter",
-  "version": "1.1",
+  "version": "1.2",
   "description": "Highlight syntax in logs from Jenkins Pipelines.",
   "permissions": ["activeTab", "storage"],
   "icons": {
